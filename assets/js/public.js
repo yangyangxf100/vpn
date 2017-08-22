@@ -1,4 +1,4 @@
-var basePath = "http://example.798artplus.com/admin/";
+var basePath = "http://example.798artplus.com/ROOT/";
 
 function getQueryVariable(variable){
        var query = window.location.search.substring(1);
