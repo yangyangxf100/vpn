@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<!-- Mirrored from www.bluevpn.pro/faq-windows.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Aug 2017 06:34:43 GMT -->
+<head>
+<meta charset="UTF-8">
+<title>windows下常见问题及解决方法 - bluevpn - 十年唯一官网™</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/swiper.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/swiper.jquery.min.js"></script>
+</head>
+<body id="article">
+<header>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">显示导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="bluevpn"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="header-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">首页</a></li>
+        <!--li><a href="https://www.bluevpn.pro/download.html">客户端下载</a></li-->
+        <!--li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">客户端下载&nbsp; <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.bluevpn.pro/download-windows.html">Windows客户端</a></li>
+            <li><a href="https://www.bluevpn.pro/download-mac.html">Mac osx客户端</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://www.bluevpn.pro/download-ios.html">iOS客户端</a></li>
+            <li><a href="https://www.bluevpn.pro/download-android.html">Android客户端</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://www.bluevpn.pro/download-others.html">其它客户端</a></li>
+          </ul>
+        </li-->
+        <li><a href="price.html">价格体系</a></li>
+        <li><a rel="nofollow" href="cart.php">购买服务</a></li>
+        <!--<li><a href="https://www.bluevpn.pro/bluevpn-offical.html">防伪声明</a></li>-->
+        <!--li class="active"><a href="https://www.bluevpn.pro/help.html">帮助中心</a--></li>
+        <li><a rel="nofollow" href="submitticket.php">联系我们</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a rel="nofollow" href="clientarea.php">控制面板</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户中心&nbsp; <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" href="clientarea.php">用户登录</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a rel="nofollow" href="pwreset.php">忘记密码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+<ol class="breadcrumb">
+  <li><a href="index.html">bluevpn</a></li>
+  <li><a href="help.html">帮助中心</a></li>
+  <li class="active">windows下常见问题及解决方法</li>
+</ol>
+
+<div class="wrap">
+  <div class="row">
+    <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          shadowsocks windows下常见问题及解决方法
+        </div>
+        <div class="panel-body">
+          <p>这篇文章主要讲一下windows下常见的一些问题，及解决方法。如果您还没有 shadowsocks 账号，请从 <a rel="nofollow" href="cart.php?gid=1">这里</a> 获得。</p>
+
+          <h3>gui-config部分</h3>
+
+          <h4>1. 服务器、端口等信息配置错误</h4>
+          <p>gui-config.json中的配置错误例子。gui-config.json是在你的shadowsocks.exe同目录下的文本文件，其中保存了shadowsocks程序中配置的服务器等信息，用户可以自行配置，也可以登录网站后台下载我们生成好的配置文件使用。</p>
+          <p class="text-center"><img style="max-width: 600px;" src="assets/images/help/faq-01.jpg" alt="" /></p>
+          <p>常见的错误有以下几种：</p>
+          <p class="text-center"><img style="max-width: 100%;" src="assets/images/help/faq-02.jpg" alt="" /></p>
+          <p>从左到右</p>
+          <p>第一种是配置错误类，图中这里就是错误的例子。</p>
+          <p>服务器ip栏应该填的是我们在后台给出的服务器地址（域名的形式），注意不要搞错。</p>
+          <p>远程端口是我们发给你的服务器信息中那个端口，是五位数的，比如10001。</p>
+          <p>加密方式统一都是 aes-256-cfb。</p>
+          <p>本地端口如无意外请直接填 1080，如果你会自己配置，那就选自己想要的端口。</p>
+          <p>第二种是密码错误的，如果是手打密码，请特别小心诸如字母l数字1，字母o数字0这些容易错的地方，而且密码是大小写敏感的，大小写不要搞错了。</p>
+          <p>第三种是额外字符的问题，在每个服务器信息配置栏，都应该是准确的信息而不包含任何额外字符，比如例子中的"******\n"，这个\n就是额外字符，"asdfpasswo0rd1l "，这个密码，最后的空格也是额外字符。</p>
+          <p>解决方法，右键shadowsocks将其退出，然后手动编辑gui-config.json文件，将这些错误更正，保存，重开shadowsocks。</p>
+          
+          <h3>迅雷部分</h3>
+
+          <h4>2. 迅雷不兼容shadowsocks的问题。</h4>
+          <p>某些版本的迅雷会更改 windows 网络设置，导致影响 shadowsocks 所使用的 socks5 代理功能，新版好像是有修复，但依然有用户会遇到这个问题。详细信息可见链接[1][2]。</p>
+          <p>解决方案，按win+r，输入services.msc，在服务列表内找到迅雷的服务，XLservicePlatform，将其禁用，再试试看。</p>
+          <p>还有问题的话，建议将迅雷完全卸载一下，重启再试试。</p>
+          <p>[1] <a href="https://github.com/shadowsocks/shadowsocks-windows/issues/247" target="_blank">https://github.com/shadowsocks/shadowsocks-windows/issues/247</a></p>
+          <p>[2] <a href="http://yangtai.xunlei.com/?p=10120" target="_blank">http://yangtai.xunlei.com/?p=10120</a></p>
+          
+          <h3>代理没有生效</h3>
+          <h4>3. 为什么我的代理没有生效？</h4>
+          <p>这个问题取决于所使用的浏览器。</p>
+          <p>IE的话，请右键 shadowsocks 图标，选择 “启用系统代理” 即可，如果你进一步再选择“全局模式”的话，用ie打开ip.cn就可以看到是shadowsocks服务器的ip，而不是你本地的ip(已知某些杀毒软件会修改ie的行为导致全局模式也是本地ip，这种情况请使用chrome测试)。</p>
+          <p>chrome的话，请参见教程配置switchyomega，并使用教程中提供的配置文件，然后一定记得要点击switchyomega的图标切换一下代理模式。</p>
+          <p class="text-center"><img style="max-width: 200px;" src="assets/images/help/faq-03.jpg" alt="" /></p>
+          
+          <h3>shadowsocks提示修改注册表失败</h3>
+          <h4>4. shadowsocks提示修改注册表失败</h4>
+          <p>这是由于shadowsocks没有权限更改它想要的注册表项目，参考链接里的信息，把那一项权限更改即可。</p>
+          <p><a href="https://github.com/shadowsocks/shadowsocks-windows/issues/253" target="_blank">https://github.com/shadowsocks/shadowsocks-windows/issues/253</a></p>
+          
+          <h3>此实现不是 Windows 平台 FIPS 验证的加密算法的一部分</h3>
+          <h4>5.此实现不是 Windows 平台 FIPS 验证的加密算法的一部分</h4>
+          <p>在通知区域的 Shadowsocks 的图标上右键，找到显示日志，单击打开。</p>
+          <p>如果看到日志里显示“此实现不是 Windows 平台 FIPS 验证的加密算法的一部分”，如下操作:</p>
+          <p>1.建议升级到最新版试试 <a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+          <p>2.如果升级到最新版没有解决问题，请您执行以下如下的操作</p>
+          <p>首先按 win + R 运行输入 regedit 打开注册表</p>
+          <p>依次打开如下项：</p>
+          <pre>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy</pre>
+          <p>找到Enable，将值改为0</p>
+          
+          <h3>系统检测到在一个调用中尝试使用指针参数时的无效指针地址</h3>
+          <h4>6.系统检测到在一个调用中尝试使用指针参数时的无效指针地址</h4>
+          <p class="text-center"><img style="max-width: 800px;" src="assets/images/help/faq-06.jpg" alt="" /></p>
+          <p>以管理员身份运行命令提示符（cmd），执行：</p>
+          <pre>netsh interface ipv4 reset
+    netsh interface ipv6 reset
+    netsh winsock reset</pre>
+          <p>重启电脑。</p>
+          
+          <h3>其它情况的排查</h3>
+          <h4>dns问题</h4>
+          <p>有些网络环境解析我们的节点地址会有麻烦</p>
+          <p>按住win+r，输入cmd，回车。在新窗口内执行nslookup 节点地址，来看一下本地dns解析是否出现问题。</p>
+          <p>图中这里是正常的输出，注意最后的Name和查到对应的Address。</p>
+          <p class="text-center"><img style="max-width: 500px;" src="assets/images/help/faq-04.jpg" alt="" /></p>
+          <p>具体操作：</p>
+          <p>打开ip.cn，将你的节点地址输入进去，然后回车，网站会返回给你一个ip，这个ip就是节点地址所对应的ip地址。打开shadowsocks程序的服务器配置窗口，将服务器地址修改成ip地址。</p>
+          <p>请注意修改的时候不要出现1章节中提到的常见错误，比如复制的时候ip后面多了个”\n”。</p>
+          <p>请注意有些特殊情况情况我们会迁移服务器，如果发现使用ip代替节点地址不能使用了，请重新操作一下，可能是ip变更了。</p>
+          
+          <h4>防火墙问题</h4>
+          <p>有一些网络环境，如公司，某些校园网，会封禁高端口，这种情况可以使用telnet来排查一下。</p>
+          <p>按住win+r，输入cmd，回车。在新窗口内执行 telnet 服务器地址 端口，即可。</p>
+          <p>如果执行完是黑屏，那就是正常的没问题，否则就是网络有防火墙封掉了高端口，如是公司的话，建议咨询管理网络的相关人员。</p>
+          <p>例子如下图，左边是失败的，右边是成功的。</p>
+          <p class="text-center"><img style="max-width: 800px;" src="assets/images/help/faq-05.jpg" alt="" /></p>
+          <p>如果执行telnet 出现了报错【’telnet’ 不是内部或外部命令、可执行的程序或批处理文档】请参见下面链接进行操作</p>
+          <p><a href="https://support.microsoft.com/zh-tw/kb/982538" target="_blank">https://support.microsoft.com/zh-tw/kb/982538</a></p>
+          
+          <h4>杀毒软件问题</h4>
+          <p>已知的一些杀毒软件，如nod32，卡巴斯基等等，他们的防火墙会影响shadowsocks导致问题，请在设置内放行shadowsocks。</p>
+          <p>例如nod32的这个选项会有影响，把它关闭掉。"设置→Internet保护→Web访问保护→Web协议→启用Https检查"。</p>
+          <p>最后，如果本篇文档不足以解决问题，请发工单，并详细描述你所遇到的问题，配上截图以便我们更好的了解你的本地环境，谢谢。</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="quick-links">
+    <div class="row">
+      <div class="col-md-3">
+        <dl>
+          <dt>服务与支持</dt>
+          <dd><a rel="nofollow" href="submitticket.php?step=2&amp;deptid=1" target="_blank">售前咨询</a></dd>
+          <dd><a rel="nofollow" href="cart.php" target="_blank">购买服务</a></dd>
+          <dd><a rel="nofollow" href="cart.php?gid=addons" target="_blank">附加服务</a></dd>
+          <dd><a href="tos.html" target="_blank">使用协议</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>资源下载</dt>
+          <dd><a href="download-windows.html" target="_blank">Windows客户端</a></dd>
+          <dd><a href="download-mac.html" target="_blank">Mac osx客户端</a></dd>
+          <dd><a href="download-ios.html" target="_blank">iOS客户端</a></dd>
+          <dd><a href="download-android.html" target="_blank">Android客户端</a></dd>
+          <dd><a href="download-others.html" target="_blank">其它客户端</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>快捷菜单</dt>
+          <dd><a rel="nofollow" href="clientarea.php" target="_blank">控制面板</a></dd>
+          <dd><a rel="nofollow" href="submitticket.php" target="_blank">提交工单</a></dd>
+          <dd><a rel="nofollow" href="supporttickets.php" target="_blank">我的工单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=services" target="_blank">我的服务</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>财务管理</dt>
+          <dd><a rel="nofollow" href="clientarea.php?action=invoices" target="_blank">我的账单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=quotes" target="_blank">定制订单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=masspay&amp;all=true" target="_blank">批量付款</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    &copy; 2014-2017 <a href="index.html">bluevpn</a> All Rights Reserved.
+  </div>
+</footer>
+<script src="assets/js/statistic.js"></script>
+</body>
+
+<!-- Mirrored from www.bluevpn.pro/faq-windows.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Aug 2017 06:34:45 GMT -->
+</html>

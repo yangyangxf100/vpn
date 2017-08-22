@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户中心 - bluevpn Software Solution</title>
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Styling -->
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/swiper.jquery.min.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/vue-resource.min.js"></script> 
+  <script src="assets/js/storage.js"></script> 
+  <script src="assets/js/public.js"></script> 
+
+
+  <script> 
+
+    window.onload=function () {
+      Vue.use(VueResource);
+      var banner = new Vue({
+        el:"#main-body",
+        data:{
+          bannerData:[]
+        },
+        methods: {
+            reg: function () {//初始化 banner 列表
+              var url=basePath+"api/v1/user/001-reg"
+              
+              var loginId = $('#loginId').val();
+              var loginPwd = $('#loginPwd').val();
+              var mailCode = $('#mailCode').val();
+
+              if(loginId==''){
+                alert('请输入邮件地址');
+              }else if(loginPwd==''){
+                alert('请输入登录密码');
+              }else if(mailCode==''){
+                alert('请输入邮箱验证码');
+              }else{
+                url = url+"?loginId="+loginId+"&loginPwd="+loginPwd+'&mailCode='+mailCode;
+                this.$http.get(url).then(function(data){
+                  var json=data.body; 
+                  var msg = json.message;                          
+
+                  if(msg!='success'){
+                    alert(msg);
+                  }else{
+                    alert('密码修改成功成功'); 
+                  }
+                },function(response){
+                  console.info(response);
+                })
+              }
+            },send:function(){
+              var url=basePath+"api/v1/tool/sendMail"
+              var loginId = $('#loginId').val();  
+              if(loginId==''){
+                alert('请输入邮件地址');
+                window.location.reload()
+              }else if(loginId.indexOf('@')==-1){
+                alert('请输入正确的邮件地址');
+                window.location.reload()
+              }else{
+                url = url+"?mail="+loginId;
+                this.$http.get(url).then(function(data){
+                  var json=data.body; 
+                  var msg = json.message;                          
+
+                  if(msg!='success'){
+                    alert(msg);
+                  }else{
+                    alert('发送成功'); 
+                  }
+                },function(response){
+                  console.info(response);
+                })
+              }
+            }
+          }
+        })             
+    } 
+  </script>
+
+
+
+
+</head>
+<body>
+
+ <embed type="text/html" src="header.html" style="width: 100%;height: 80px;"/>
+
+
+  <ol class="breadcrumb">
+    <li><a href="index.html">bluevpn</a></li>
+    <li class="active">帮助中心</li>
+  </ol>
+
+  <section class="wrap introduction">
+    <h2>bluevpn <sup>pro</sup> 5 分钟快速入门</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="item">
+          <h4>windows 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 windows 操作系统安装使用教程</p>
+          <p><a href="help/shadowsocks-windows.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>mac osx 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 mac osx 操作系统安装使用教程</p>
+          <p><a href="help/shadowsocks-mac.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>iOS 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 iOS 操作系统安装使用教程</p>
+          <p><a href="help/shadowsocks-ios.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>android 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 android 操作系统安装使用教程</p>
+          <p><a href="help/shadowsocks-android.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>surge (iOS) 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 iOS surge app 使用教程</p>
+          <p><a href="help/shadowsocks-surge.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>PSV/PS4/PS3 使用教程</h4>
+          <p>介绍bluevpn <sup>pro</sup> 客户端 PSV/PS4/PS3 使用教程</p>
+          <p><a href="help/shadowsocks-ps4.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>Foxyproxy-standard 使用教程</h4>
+          <p>Firefox配合GFWList实现自动切换代理</p>
+          <p><a href="help/foxyproxy.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>SwitchyOmega 使用教程</h4>
+          <p>Chrome + Proxy SwitchyOmega 使用教程</p>
+          <p><a href="help/switchyomega.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>SOCKSCAP64 使用教程</h4>
+          <p>SOCKSCAP64 全局代理玩美服/韩服/日服/台服</p>
+          <p><a href="help/sockscap64.html">查看详情</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item">
+          <h4>Proxifier 使用教程</h4>
+          <p>Proxifier实现影梭全局代理玩美服/韩服/日服/台服</p>
+          <p><a href="help/proxifier.html">查看详情</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap article-list">
+    <h2>bluevpn <sup>pro</sup> 常见问题排查</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          <li><a href="help/faq-windows.html">windows下常见问题及解决方法</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li><a href="help/faq-pinterest.html">pinterest等网站无法访问的问题及解决方法</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li><a href="help/faq-freevpn.html">如何开通免费bluevpn <sup>pro</sup> 服务</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<embed type="text/html" src="footer.html" style="width: 100%;height: 220px;" />
+
+
+</body>
+
+</html>
