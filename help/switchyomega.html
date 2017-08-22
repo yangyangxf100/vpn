@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<!-- Mirrored from www.bluevpn.pro/switchyomega.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Aug 2017 06:34:41 GMT -->
+<head>
+<meta charset="UTF-8">
+<title>Chrome + Proxy SwitchyOmega 使用教程 - bluevpn - 十年唯一官网™</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/swiper.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/swiper.jquery.min.js"></script>
+</head>
+<body id="article">
+<header>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">显示导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="bluevpn"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="header-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">首页</a></li>
+        <!--li><a href="https://www.bluevpn.pro/download.html">客户端下载</a></li-->
+        <!--li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">客户端下载&nbsp; <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.bluevpn.pro/download-windows.html">Windows客户端</a></li>
+            <li><a href="https://www.bluevpn.pro/download-mac.html">Mac osx客户端</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://www.bluevpn.pro/download-ios.html">iOS客户端</a></li>
+            <li><a href="https://www.bluevpn.pro/download-android.html">Android客户端</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://www.bluevpn.pro/download-others.html">其它客户端</a></li>
+          </ul>
+        </li-->
+        <li><a href="price.html">价格体系</a></li>
+        <li><a rel="nofollow" href="cart.php">购买服务</a></li>
+        <!--li class="active"><a href="https://www.bluevpn.pro/help.html">帮助中心</a></li-->
+        <li><a rel="nofollow" href="submitticket.php">联系我们</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a rel="nofollow" href="clientarea.php">控制面板</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户中心&nbsp; <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" href="clientarea.php">用户登录</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a rel="nofollow" href="pwreset.php">忘记密码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+<ol class="breadcrumb">
+  <li><a href="index.html">bluevpn</a></li>
+  <li><a href="help.html">帮助中心</a></li>
+  <li class="active">Chrome + Proxy SwitchyOmega 使用教程</li>
+</ol>
+
+<div class="wrap">
+  <div class="row">
+    <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          Chrome + Proxy SwitchyOmega 使用教程
+        </div>
+        <div class="panel-body">
+          <p>首先，您应该拥有一个 bluevpn <sup>pro</sup> 账号，然后再简单配置一下客户端，即可畅享网络，正版 bluevpn <sup>pro</sup> 账号从 <a rel="nofollow" href="cart.php?gid=1">这里</a> 获得。</p>
+          <p>继续阅读您需要按上面方式配置好 Shadowsocks 客户端，并且设置好系统代理模式。</p>
+          <p><strong>安装扩展</strong></p>
+          <p>首先在 Shadowsocks 的图标上右键，确保 “启用系统代理” 被勾选，并且系统代理模式为 “全局模式” 。</p>
+          <p>如果您的 Chrome 未安装 SwitchyOmega 扩展，请将前往 Chrome 的 设置 &gt; 高级设置 &gt; 网络设置 &gt; 更改代理服务器设置，若点击后弹出 Internet 属性 的设置窗口则表示当前 Chrome 使用的是系统代理。</p>
+          <p>然后通过 <a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif" target="_blank">https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif</a> 安装 Proxy SwitchyOmega 扩展。</p>
+          <p>如果您无法访问，也可以下载这个 <a href="https://www.shadowsocks.software/downloads/SwitchyOmega.crx">Proxy-SwitchyOmega_v2.3.16.crx</a> 文件，下载完成后在 设置 &gt;&gt; 扩展，直接把该 .crx 文件拖入窗口然后安装即可</p>
+          <p>扩展的配置(以下2选1即可)</p>
+          <p><strong>1. 使用本站提供的已经设置好的备份直接恢复配置（推荐）</strong></p>
+          <p>通过这个链接下载 switchyomega 的配置文件。</p>
+          <p>Windows 用户：<a href="https://www.shadowsocks.software/downloads/OmegaOptions-Win-20170109.bak">OmegaOptions-Win-20170109.bak</a></p>
+          <p>MAC OS X 用户：<a href="https://www.shadowsocks.software/downloads/OmegaOptions osx ver.bak">OmegaOptions osx ver.bak</a></p>
+          <p>然后打开 Proxy SwitchyOmega 的设置，选择从备份文件恢复，然后选择刚才下载的文件，如图：</p>
+          <p class="text-center"><img style="max-width: 800px;" src="assets/images/help/switchyomega-01.png" alt="" /></p>
+          <p>这时点击 switchyomega 图标，可以看到有三个模式，ss，ss-白名单，ss-黑名单。</p>
+          <p>三个的区别，当你的代理模式选中</p>
+          <ol>
+          <li>ss，所有的网址都经过代理。</li>
+          <li>ss-白名单，内置一个列表，所有匹配这个列表的网址，都不走代理，其它走代理。</li>
+          <li>ss-黑名单，内置一个列表，所有匹配这个列表的网址，走代理，其它不走代理。</li>
+          </ol>
+          <p>注： 也可以选中系统代理，即使用上面所提到的系统代理。</p>
+          <p>按自己的需要使用，如果使用过程中发现，白名单下不该走代理的走代理了，或是黑名单下该走代理的没走，欢迎发工单，我们继续完善这个列表。</p>
+          <p>然后，记得一定要选择 系统代理 / ss / ss-白名单 / ss-黑名单 四者其中之一，选直连不会走代理的。</p>
+          <hr />
+          <p>如果不准备使用本站提供的配置文件并且希望配合 GFWList 规则实现自动代理，请看下面内容（如果使用了本站提供的配置文件，请忽视下面的内容）</p>
+          <p><strong>2. 设置配合 GFWList 实现自动切换的模式</strong></p>
+          <p>按照下图所示：</p>
+          <ol>
+          <li>单击新建情景模式，在弹出的窗口中选中自动切换，并且将名称填写为自动切换或其他名称。</li>
+          <li>在新的页面，首先单击添加在线规则
+          <p class="text-center"><img style="max-width: 800px;" src="assets/images/help/switchyomega-02.png" alt="" /></p>
+          </li>
+          <li>将规则列表规则对应的 ③ 的位置地方选为 Shadowsocks 对应的规则，如果之前是导入本站的备份的话，请选中 ss 即可。</li>
+          <li>将规则列表格式选中 AutoProxy</li>
+          <li>在规则列表网址中填入 <a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></li>
+          </ol>
+          <p class="text-center"><img style="max-width: 800px;" src="assets/images/help/switchyomega-03.png" alt="" /></p>
+          <p>之后可以可以通过选中该模式实现自动代理，如果特殊需要的域名也可以手动通过添加条件指定代理。</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="quick-links">
+    <div class="row">
+      <div class="col-md-3">
+        <dl>
+          <dt>服务与支持</dt>
+          <dd><a rel="nofollow" href="submitticket.php?step=2&amp;deptid=1" target="_blank">售前咨询</a></dd>
+          <dd><a rel="nofollow" href="cart.php" target="_blank">购买服务</a></dd>
+          <dd><a rel="nofollow" href="cart.php?gid=addons" target="_blank">附加服务</a></dd>
+          <dd><a href="tos.html" target="_blank">使用协议</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>资源下载</dt>
+          <dd><a href="download-windows.html" target="_blank">Windows客户端</a></dd>
+          <dd><a href="download-mac.html" target="_blank">Mac osx客户端</a></dd>
+          <dd><a href="download-ios.html" target="_blank">iOS客户端</a></dd>
+          <dd><a href="download-android.html" target="_blank">Android客户端</a></dd>
+          <dd><a href="download-others.html" target="_blank">其它客户端</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>快捷菜单</dt>
+          <dd><a rel="nofollow" href="clientarea.php" target="_blank">控制面板</a></dd>
+          <dd><a rel="nofollow" href="submitticket.php" target="_blank">提交工单</a></dd>
+          <dd><a rel="nofollow" href="supporttickets.php" target="_blank">我的工单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=services" target="_blank">我的服务</a></dd>
+        </dl>
+      </div>
+      <div class="col-md-3">
+        <dl>
+          <dt>财务管理</dt>
+          <dd><a rel="nofollow" href="clientarea.php?action=invoices" target="_blank">我的账单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=quotes" target="_blank">定制订单</a></dd>
+          <dd><a rel="nofollow" href="clientarea.php?action=masspay&amp;all=true" target="_blank">批量付款</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    &copy; 2014-2017 <a href="index.html">bluevpn</a> All Rights Reserved.
+  </div>
+</footer>
+<script src="assets/js/statistic.js"></script>
+</body>
+
+<!-- Mirrored from www.bluevpn.pro/switchyomega.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Aug 2017 06:34:41 GMT -->
+</html>

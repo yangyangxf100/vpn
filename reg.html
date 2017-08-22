@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户中心 - bluevpn Software Solution</title>
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Styling -->
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/swiper.jquery.min.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/vue-resource.min.js"></script> 
+  <script src="assets/js/storage.js"></script> 
+  <script src="assets/js/public.js"></script> 
+
+
+  <script> 
+
+    window.onload=function () {   
+      Vue.use(VueResource);
+      var banner = new Vue({
+        el:"#main-body",
+        data:{
+          bannerData:[]
+        },
+        methods: {
+          reg: function () {
+            var url=basePath+"api/v1/user/001-reg"
+
+            var loginId = $('#loginId').val();
+            var loginPwd = $('#loginPwd').val();
+            var mailCode = $('#mailCode').val();
+
+            if(loginId==''){
+              alert('请输入邮件地址');
+            }else if(loginPwd==''){
+              alert('请输入登录密码');
+            }else if(mailCode==''){
+              alert('请输入邮箱验证码');
+            }else{
+              url = url+"?loginId="+loginId+"&loginPwd="+loginPwd+'&mailCode='+mailCode;
+              this.$http.get(url).then(function(data){
+                var json=data.body; 
+                var msg = json.message;                          
+
+                if(msg!='success'){
+                  alert(msg);
+                }else{
+                  alert('注册成功'); 
+                   parent.location.href='login.html';
+                }
+              },function(response){
+                console.info(response);
+              })
+            }
+          },send:function(){
+            var url=basePath+"api/v1/tool/sendMail"
+            var loginId = $('#loginId').val();  
+            if(loginId==''){
+              alert('请输入邮件地址');
+              window.location.reload()
+            }else if(loginId.indexOf('@')==-1){
+              alert('请输入正确的邮件地址');
+              window.location.reload()
+            }else{
+              url = url+"?mail="+loginId;
+              this.$http.get(url).then(function(data){
+                var json=data.body; 
+                var msg = json.message;                          
+
+                if(msg!='success'){
+                  alert(msg);
+                }else{
+                  alert('发送成功'); 
+                }
+              },function(response){
+                console.info(response);
+              })
+            }
+          }
+        }
+      })             
+    } 
+  </script>
+</head>
+<body>
+  <embed type="text/html" src="header.html" style="width: 100%;height: 80px;"/>
+  <section id="main-body" class="wrap">
+    <div class="row">
+      <!-- Container for main page display content -->
+      <div class="col-xs-12 main-content">           
+        <div class="logincontainer">
+          <form method="post" action="#" role="form">
+            <input type="hidden" name="token" value="2a007d91a5bcbc832b2ac55ba0d2fd19260acb7a" />
+            <div class="form-group">
+              <label for="inputEmail">邮件地址</label>
+              <input type="email" name="username" class="form-control" id="loginId" placeholder="输入邮箱" autofocus @blur="send()">
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword">密码</label>
+              <input type="password" name="password" class="form-control" id="loginPwd" placeholder="密码" autocomplete="off" >
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail">邮箱验证码</label>
+              <input type="email" name="username" class="form-control" id="mailCode" placeholder="输入邮箱" autofocus>
+            </div>
+
+            <div align="center">
+              <input id="login" type="button" class="btn btn-primary" value="注册" @click="reg()"/> 
+              <a href="login.html" class="btn btn-default">登录</a>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.main-content -->
+    </div>
+    <div class="clearfix"></div>
+  </section>
+ <embed type="text/html" src="footer.html" style="width: 100%;height: 220px;" />
+</body> 
+</html>

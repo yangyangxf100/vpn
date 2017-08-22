@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>提交工单 - bluevpn Software Solution</title>
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Styling -->
+  <link href="assets/css/overrides.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/swiper.jquery.min.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/vue-resource.min.js"></script> 
+  <script src="assets/js/storage.js"></script> 
+  <script src="assets/js/public.js"></script> 
+
+  <script>
+    window.onload=function () {           
+      Vue.use(VueResource);
+      var banner = new Vue({
+        el:"#main-body",
+        data:{
+          bannerData:[]
+        },
+        methods: {
+                    add: function () {//初始化 banner 列表
+                      var url=basePath+"api/v1/004-optionAdd"
+                      
+                      var loginId = $('#loginId').val();
+                      var title = $('#title').val();
+                      var content = $('#content').val();
+
+                      if(loginId==''){
+                        alert('请输入邮箱');
+                      }else if(title==''){
+                        alert('请输入标题');
+                      }else if(content==''){
+                        alert('请输入内容');
+                      }else{
+                        url = url+"?loginId="+loginId+"&title="+title+'&content='+content;
+                        this.$http.get(url).then(function(data){
+                          var json=data.body; 
+                          var msg = json.message;
+                          
+
+                          if(msg!='success'){
+                            alert(msg);
+                          }else{
+                            alert('反馈成功');
+                          }
+                        },function(response){
+                          console.info(response);
+                        })
+                      }
+                    },send:function(){
+                      alert('send');
+                    }
+                  }
+                }) 
+    }
+  </script>
+
+
+</head>
+<body>
+<embed type="text/html" src="header.html" style="width: 100%;height: 80px;"/>
+
+
+  <section id="main-body" class="wrap">
+
+    <div class="row">
+      <!-- Container for main page display content -->
+      <div class="col-xs-12 main-content">
+        <div class="page-title">
+         <h2>联系我们</h2>
+       </div> 
+
+       <div class="panel panel-default">
+        <div class="panel-body">    
+          <form method="post" action="#" enctype="multipart/form-data" role="form" class="submit-ticket-form">
+            <div class="alert alert-danger" style="font-size: 16px;">
+              <h4>请注意：</h4>
+              <p>从7月17日开始陆续非常多的用户到本站反馈，理由是购买的服务无法使用，提示服务器连接失败（涉及的用户群体规模还是比较大的，详情见微博等社区的相关讨论）。具体缘由我们不便分析，我们对其它商家的服务不予置评，对用户的遭遇表示同情。</p>
+              <p>但是我们与对方无任何关系（从网站、域名及产品分类、产品价格方面无一处相似之处，使用的软件客户端更不一样），如果您的合法权益受到侵害，建议您持支付凭证通过合法渠道维护您的合法权益。</p>
+              <p>非我们的付费用户我们也不可能提供相应的技术支持，请勿提交类似咨询工单，我们已经无精力逐个回复解释，希望能够谅解。</p>
+            </div>
+
+            <div class="row"> 
+              <div class="form-group col-sm-5">
+                <label for="inputEmail">邮件地址</label>
+                <input type="email" name="email" id="loginId" value="" class="form-control" style="width:80%;"/> 
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-5">
+                <label for="inputSubject">验证码</label> 
+                <input type="text" name="subject" id="inputSubject" value=""  style="width:30%;" /> 
+                <img src="http://127.0.0.1:8080/ROOT/api/v1/tool/imageCode?token=2">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-5">
+                <label for="inputSubject">主题</label>
+                <input type="text" name="subject" id="title" value="" class="form-control" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-5">
+                <label for="inputSubject">内容</label>
+                <input type="text" name="subject" id="content" value="" class="form-control" style="height:80px;"/>
+              </div>
+            </div>
+
+            <div class="row">
+              <p class="text-center">
+                <input type="button" id="openTicketSubmit" value="提交" class="btn btn-primary" @click="add()"/>
+                <a href="#" class="btn btn-default">取消</a>
+              </p>
+            </div>
+          </form>    
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="clearfix"></div>
+</section>
+
+
+<embed type="text/html" src="footer.html" style="width: 100%;height: 220px;" />
+
+
+</body> 
+</html>

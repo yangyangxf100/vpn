@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户中心</title>
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Styling -->
+  <link href="assets/css/overrides.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/swiper.jquery.min.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/vue-resource.min.js"></script> 
+  <script src="assets/js/storage.js"></script> 
+  <script src="assets/js/public.js"></script> 
+  <script src="assets/js/jquery.qrcode.min.js"></script> 
+  
+
+  <script>
+    window.onload=function () {            
+      Vue.use(VueResource);
+      var init = new Vue({
+        el:".panel-body",
+        data:{
+          loginId:'',
+          endTime:'',
+          shareUrl:''
+        },
+        methods: {
+            init: function () {                
+               var v = window.LS.get("vpn");   
+                if(undefined ==v){
+                  alert('请登录');
+                  parent.location.href='login.html';
+                }else{
+                  	v = JSON.parse(v);
+                  	this.loginId = v.loginId;
+                  	this.endTime = v.endTime;
+                  	this.shareUrl = basePath+'open/'+v.code;
+
+
+                  	//得到我的 vpn 信息
+                  	var url=basePath+"api/v1/user/006-myVpn?token="+v.token;
+                  	this.$http.get(url).then(function(data){
+			            var json=data.body; 
+			            var data = json.rows;
+
+			            $('#code').qrcode(data);                  
+			        },function(response){
+			            console.info(response);
+			        })
+
+                  	//获取结束时间
+			        var url=basePath+"api/v1/user/007-getEndTime?token="+v.token;
+                  	this.$http.get(url).then(function(data){
+			            var json=data.body; 
+			            var data = json.rows;
+
+			           	this.endTime = data;                  
+			        },function(response){
+			            console.info(response);
+			        })
+                }              
+            } 
+          }
+        }) 
+
+      init.init();
+    }
+  </script>
+</head>
+<body>
+  <embed type="text/html" src="header.html" style="width: 100%;height: 80px;"/>
+  <section id="main-body" class="wrap">
+    <div class="row">
+      <!-- Container for main page display content -->
+      <div class="col-xs-12 main-content">
+        <div class="page-title">
+         <h2>个人中心</h2>
+       </div> 
+
+       <div class="panel panel-default">
+        <div class="panel-body">    
+          <form method="post" action="#" enctype="multipart/form-data" role="form" class="submit-ticket-form">
+            <div class="alert alert-danger" style="font-size: 16px;">
+              <h4>{{loginId}}</h4>             
+              <p><div id="code">&nbsp;&nbsp;&nbsp;&nbsp;</div></p> 
+              <p>截止时间： {{endTime}}</p>              
+              <p>请用 shadowSockets 客户端扫描链接</p>
+              <p style="color: blue">个人推广链接： {{shareUrl}}</p>
+            </div> 
+          </form>    
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="clearfix"></div>
+</section>
+<embed type="text/html" src="footer.html" style="width: 100%;height: 220px;" />
+</body> 
+</html>
