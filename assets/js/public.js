@@ -1,4 +1,4 @@
-var basePath = "http://127.0.0.1:8080/ROOT/";
+var basePath = "http://example.798artplus.com/admin/";
 
 function getQueryVariable(variable){
        var query = window.location.search.substring(1);
