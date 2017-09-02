@@ -1,4 +1,5 @@
-var basePath = "http://example.798artplus.com/";
+// var basePath = "http://example.798artplus.com/";
+var basePath = "http://47.92.113.95:81/";
 
 function getQueryVariable(variable){
        var query = window.location.search.substring(1);
